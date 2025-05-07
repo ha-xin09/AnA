@@ -28,18 +28,24 @@
 
 
 def sort(a, b, c):
-    if (a>=b and b>=c):
-        print(sort(c, b, a))
-    elif (b>=a and a>=c):
-        print(sort(c, a, b))
-    elif (c>=a and a>=b):
-        print(sort(b, a, c))
-    elif (a>=c and c>=b):
-        print(sort(b, c, a))
-    elif (c>=b and b>=a):
-        print(sort(a, b, c))
-    elif (b>=c and c>=a):
-        print(sort(a, c, b))
+    tmp = 0
+    
+    for i in range(3):
+      
+        if a > b:
+            tmp = a
+            a = b
+            b = tmp
 
+        if b > c:
+            tmp = b
+            b = c
+            c = tmp
 
-#print(sort(3, 1, 2))
+        if a > b:
+            tmp = a
+            a = b
+            b = tmp
+    return a,b,c
+
+print(sort(3, 1, 2))
